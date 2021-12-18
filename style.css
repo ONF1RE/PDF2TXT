@@ -1,0 +1,278 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    overflow: hidden;
+}
+
+.container{
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.navbar{
+    background: linear-gradient(#e891b6, #d9a1e8);
+    height: 9vh;
+    width: 100%;
+    align-items: center;
+}
+
+.logo{
+    padding-top: 8px;
+    padding-left: 45%;
+    position: center;
+    width: 150px;
+    cursor: pointer;
+}
+
+.row{
+    padding-left: 4%;
+    padding-right: 4%;
+    height: 65vh;
+    margin: 80px 0;
+}
+
+form{
+    display: flex;
+}
+
+.col-1{
+    flex: 3;
+    align-items: center;
+}
+
+.color-box{
+    background: linear-gradient(to right, #d969a1, #fa29c9);
+    border-radius: 20px;
+    height: 33vh;
+    margin-left: 6%;
+}
+
+.dot-box{
+    background: linear-gradient(#e891b6, #d9a1e8);
+    height: 20vh;
+    width: 40%;
+    margin-top: 25px;
+    margin-left: 45px;
+    position: absolute;
+    border: 2px dashed #fff;
+    border-radius: 15px;
+}
+
+.upload-btn{
+    position: absolute;
+    width: 100px;
+    margin-left: 285px;
+    margin-top: 184px;
+    padding: 10px 20px;
+    border: 2px solid #b44a80;
+    color: #3f034f;
+    background: linear-gradient(to right, #e891b6, #d9a1e8);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    font-size: 16px;
+    font-family: Bahnschrift;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+input[type="file"]{
+    display: none;
+}
+
+.add-btn img{
+    width: 35px;
+    margin-top: 35px;
+    margin-left: 47%;
+}
+
+.add-btn p{
+    margin-top: 0px;
+    letter-spacing: 1px;
+}
+
+.add-btn{
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.file-view img{
+    width: 55px;
+    margin-top: 25px;
+    margin-left: 0;
+}
+
+.file-view p{
+    margin-top: 5px;
+    letter-spacing: 1px;
+}
+
+.file-view{
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+}
+
+.col-2{
+    flex: 2;
+    position: relative;
+    margin-left: 150px;
+}
+
+.col-2 h1{
+    font-size:60px;
+    margin-top: -10px;
+    margin-bottom: -30px;
+}
+
+.col-2 h2{
+    margin-bottom: -10px;
+    font-size: 40px;
+    color: #707070;
+    font-weight: 100;
+}
+
+.col-2 h4 a{
+    font-size: 16px;
+    color:#b7b7b7;
+    font-weight: 100;
+    margin-right: 80px;
+    margin-left: 2px;
+}
+
+input[type="submit"]{
+    display: none;
+}
+
+.convert-btn{
+    width: 150px;
+    border: 0;
+    padding: 15px 40px;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(to right, #f63ea0, #fc4538);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: width 0.5s;
+    font-size: 16px;
+    font-family: Bahnschrift;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.convert-btn img{
+    width: 30px;
+    display: none;
+}
+
+.convert-btn:hover img {
+    display: block;
+    margin-left: 15px;
+}
+
+.convert-btn:hover{
+    width: 107px;
+    display: flex;
+    align-items: center;
+}
+
+.col-2::before{
+    content: '';
+    width: 12px;
+    height: 60%;
+    background: linear-gradient(#fa29c9, #fa095d);
+    position: absolute;
+    left: -40px;
+    top: 0;
+}
+
+.footer{
+    height: 10vh;
+    width: 100%;
+    text-align: center;
+}
+
+.footer h4{
+    font-size: 12px;
+    font-weight: 100;
+    padding-top: 8px;
+}
+
+.col-1 h2{
+    margin-top: 8%;
+    padding-left: 58px;
+    font-weight: 50;
+    font-family: Dubai;
+    letter-spacing: 1px;
+}
+
+.box{
+    display: flex;
+    height: 20vh;
+    width: 100%;
+}
+
+.box-1, .box-2, .box-3{
+    text-align: center;
+    flex: 1;
+}
+
+.box-1 h3, .box-2 h3, .box-3 h3{
+    font-family: Dubai;
+    color: #cc4116;
+}
+
+.box-1 img, .box-2 img, .box-3 img{
+    width: 30px;
+}
+
+.alert-box{
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+    height: 40px;
+}
+
+.error{
+    height: 100%;
+    background-color: #dd7b7b;
+    color: rgb(97, 2, 26);
+}
+
+.error a, .success a{
+    position: absolute;
+    margin-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.success{
+    height: 100%;
+    background-color: #83e7ad;
+    color: rgb(0, 70, 0);
+}
+
+center h2{
+    font-size: 50px;
+    color:rgb(119, 11, 29);
+    font-family:sans-serif;
+    margin-top: 8%;
+}
+
+center p{
+    font-size: 25px;
+    color:rgb(77, 18, 36);
+    font-family: sans-serif;
+    margin-top: 0;
+    font-weight: 100;
+}
+
+center a{
+    font-size: 18px;
+    font-family: sans-serif;
+    font: italic;
+    margin-top: 0;
+}

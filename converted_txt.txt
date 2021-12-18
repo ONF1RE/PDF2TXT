@@ -1,0 +1,478 @@
+1
+Embedded Operating Systems
+16.480/552
+2
+Introduction
+• A computer system consists of
+– hardware
+– system programs
+– application programs
+3
+What is an Operating System
+• It is an extended machine
+– Hides the messy details which must be performed
+– Presents user with a virtual machine, easier to use
+• It is a resource manager
+– Each program gets time with the resource
+– Each program gets space on the resource
+4
+History of Operating Systems (1)
+Early batch system
+– bring cards to 1401
+– read cards to tape
+– put tape on 7094 which does computing
+– put tape on 1401 which prints output
+5
+History of Operating Systems (2)
+• First generation 1945 - 1955
+– vacuum tubes, plug boards
+• Second generation 1955 - 1965
+– transistors, batch systems
+• Third generation  1965 – 1980
+– ICs and multiprogramming
+• Fourth generation 1980 – present
+– personal computers
+6
+History of Operating Systems (3)
+• Structure of a typical FMS job – 2nd generation
+7
+History of Operating Systems (4)
+• Multiprogramming system
+– three jobs in memory – 3rd generation
+8
+The Operating System Zoo
+• Mainframe operating systems
+• Server operating systems
+• Multiprocessor operating systems
+• Personal computer operating systems
+• Real-time operating systems
+• Embedded operating systems
+• Smart card operating systems
+9
+Computer Hardware Review (1)
+• Components of a simple personal computer
+Monitor
+Bus
+10
+Computer Hardware Review (2)
+(a) A three-stage pipeline
+(b) A superscalar CPU
+11
+Computer Hardware Review (3)
+• Typical memory hierarchy
+– numbers shown are rough approximations
+12
+Computer Hardware Review (4)
+Structure of a disk drive
+13
+Computer Hardware Review (5)
+One base-limit pair and two base-limit pairs
+14
+Computer Hardware Review (6)
+(a) Steps in starting an I/O device and getting interrupt
+(b) How the CPU is interrupted
+(a) (b)
+15
+Computer Hardware Review (7)
+Structure of a large Pentium system
+16
+Operating System Concepts (1)
+• A process tree
+– A created two child processes, B and C
+– B created three child processes, D, E, and F
+17
+Operating System Concepts (2)
+(a) A potential deadlock. (b) an actual deadlock.
+18
+Operating System Concepts (3)
+File system for a university department
+19
+Operating System Concepts (4)
+• Before mounting,
+– files on floppy are inaccessible
+• After mounting floppy on b,
+– files on floppy are part of file hierarchy
+20
+Operating System Concepts (5)
+Two processes connected by a pipe
+21
+Steps in Making a System Call
+There are 11 steps in making the system call
+                 read (fd, buffer, nbytes)
+22
+Some System Calls For Process Management
+23
+Some System Calls For File Management
+24
+Some System Calls For Directory Management
+25
+Some System Calls For Miscellaneous Tasks
+26
+System Calls (1)
+• A stripped down shell:
+while (TRUE) { /* repeat forever */
+    type_prompt( ); /* display prompt */
+    read_command (command, parameters) /* input from terminal */
+if (fork() != 0) { /* fork off child process */
+    /* Parent code */
+    waitpid( -1, &status, 0); /* wait for child to exit */
+} else {
+    /* Child code */
+    execve (command, parameters, 0); /* execute command */
+ }
+}
+27
+System Calls (2)
+• Processes have three segments: text, data, stack
+28
+System Calls (3)
+(a) Two directories before linking
+/usr/jim/memo to ast's directory
+(b) The same directories after linking
+29
+System Calls (4)
+(a) File system before the mount
+(b) File system after the mount
+30
+System Calls (5)
+Some Win32 API calls
+31
+Embedded OS
+• What is an embedded Operating System
+• Who are the players
+• Linux as an embedded OS
+• Tools and development
+• Applications and products
+• The embedded OS market
+• Embedded OS Resources
+32
+OS Flavors
+• Desktop
+– Windows (9X, XP Home, XP/2000 Pro)
+– Mac
+• Server
+– Windows (XP/2000 Server &Advanced Server)
+– Unix Varieties
+• Embedded
+– Many
+33
+What is an Embedded OS?
+• An "embedded system" is any computer system or
+computing device that performs a dedicated
+function or is designed for use with a specific
+embedded software application.
+• Embedded systems may use a ROM-based
+operating system or they may use a disk-based
+system, like a PC. But an embedded system is not
+usable as a commercially viable substitute for
+general purpose computers or devices.
+34
+What makes a good Embedded OS?
+• Modular
+• Scalable
+• Configurable
+• Small footprint
+• CPU support
+• Device drivers
+• etc, etc, etc...
+35
+What is Real Time?
+“A real time system is one in which the
+correctness of the computations not only
+depends upon the logical correctness of the
+computation but also upon the time at which
+the result is produced. If the timing
+constraints of the system are not met,
+system failure is said to have occurred.”
+- Donald Gillies
+36
+What is Real Time?
+“Real time in operating systems:
+The ability of the operating system to
+provide a required level of service in a
+bounded response time.”
+- POSIX Standard 1003.1
+37
+Hard vs. Soft Real Time
+• Hard
+– guaranteed worst-case response times
+– absolutely, positively, first time every time
+• Soft
+– Kinda, sorta, usually
+38
+What makes a good RTOS?
+• Multi-threaded and pre-emptible
+• Thread priority has to exist because no
+deadline driven OS exists
+• Must support predictable thread
+synchronization mechanisms
+• A system of priority inheritance must exist
+39
+Who are the Embedded OS players?
+• Wind River Systems
+– VxWorks
+– pSOS
+• QNX Software Systems
+– QNX
+• Green Hills Software
+– Integrity
+40
+Who are the Embedded OS players?
+• Mentor Graphics
+– VRTX
+• Palm Computing
+– PalmOS
+• Symbian
+– SymbianOS
+41
+Microsoft
+• Embedded NT/XP
+– “Real-time” control
+• Windows CE (CE.NET)
+– Internet devices
+• Pocket PC 2002
+– Handheld PC’s and PDA’s
+42
+Commercial Embedded Linux
+• AMIRIX Embedded Linux
+– derived from Debian
+• Coollogic Coollinux
+– combines Linux and Java for Internet apps
+• Coventive Xlinux
+– kernel can be as small as 143KB
+• Esfia RedBlue Linux
+– 400K, designed for wireless apps
+43
+Commercial Embedded Linux
+• KYZO Pizza Box Linux
+– SAMBA based file, print, CD server
+• Lineo Embedix
+– supports real time and high availability apps
+• LynuxWorks BlueCat
+– general purpose embedded solution
+• MontaVista Linux
+– general purpose embedded solution
+44
+Commercial Embedded Linux
+• Neoware  NeoLinux
+– Red Hat derived for information appliances
+• PalmPalm Tynux
+– Internet appliuance and multimedia
+• Red Hat Embedded Linux
+– general purpose embedded solution
+• RedSonic Red-Ice Linux
+– runs from DiskonChip or CompactFlash
+45
+Commercial Embedded Linux
+• RidgeRun DSP Linux
+– for multimedia, wireless, RT on DSP
+• TimeSys Linux GPL
+– low latency enhanced kernel
+• Tuxia TASTE
+– distro targets Internet appliances
+• Vital Systems vLinux
+– for ARM based embedded apps
+46
+Open Source Embedded Linux
+• Embedded Debian Project
+– convert Debian to an embedded OS
+• ETLinux
+– for PC104 SBC’s
+• uCLinux
+– for microprocessors that don’t have MM
+• uLinux (muLinux)
+– distro fits on a single floppy
+47
+Commercial Linux RTOS
+• FSMLabs - Open RT Linux
+• Lineo - Embedix Realtime
+• LynuxWorks - BlueCat RT
+• MontaVista Software - Real Time Extensions
+• REDSonic - REDICE Linux
+• TimeSys - Linux/Real-Time
+48
+Open Source Linux RTOS
+• ART Linux - real time extension based on
+RTLinux
+• KURT - event schedules with 10us resolution
+• Linux-SRT - for soft real time apps like
+multimedia
+• Qlinux - provides Quality of Service guarantees
+• RTAI - “hard” Real Time Application Interface
+49
+RTLinux
+• A “hard real-time” mini operating system
+• runs Linux as it’s lowest priority execution thread
+• Linux thread completely preemptible
+• Real time threads and interrupt handlers never
+delayed by non-realtime operations
+• Supports user level programming
+• MiniRTL implementation fits on a floppy
+50
+What’s so special about Linux?
+• Multiple choices vs. sole source
+• Source code freely available
+• Robust and reliable
+• Modular, configurable, scalable
+• Superb support for networking and Internet
+• No runtime licenses
+• Large pool of skilled developers
+51
+What’s so special about Linux?
+52
+What’s special about Open Source?
+53
+Flies in the Ointment
+• Lack of hardware device drivers
+• Competing and/or lacking standards
+• No formalized qualification testing
+• No single source for marketing
+• GPL license issues
+• Startup vendors with shaky futures
+54
+What CPU’s will it run on?
+• Intel X86
+• MIPS
+• ARM
+• StrongARM
+• PowerPC
+• Hitachi SuperH
+55
+Projected Target CPU’s
+56
+Single Board Computers
+• Little Board (5.75 x 8.0 in.) -- complete
+systems on a single compact board, expandable
+with plug-on function modules
+• ISA "slot boards" (full-length, 13.8 x 4.8 in.;
+half-length, 7.1 x 4.8 in.) -- IBM PC plug-in
+cards which could function as standalone SBCs
+backplanes)
+• PC/104 modules (3.6 x 3.8 in.) -- compact,
+rugged, self-stacking modules featuring a
+reliable pin-and-socket board-to-board
+expansion bus
+57
+Single Board Computers
+with PCI
+• PC/104-Plus -- PCI added to
+PC/104
+• EBX -- PC/104-Plus added to Little
+Board
+58
+Target Devices
+59
+Any Development Tools Available?
+• QT/Embedded
+• Other GUI/Windowing toolkits
+• Arcom Control Systems
+• GNUPro Tools
+• Vendor specific
+• Standard Linux toolset
+60
+C or C++ for Development?
+• In general C is a better choice
+– Advanced OOP features can cause code bloat
+– C++ compilers can generate many routines for
+a single function
+– Virtual methods and polymorphism slow
+program launch times significantly
+• Size really does matter
+61
+What’s It Being Used For?
+• Control and Monitoring Applications
+• Industrial Controllers
+• TV Set Top Boxes (TiVO)
+• Handheld PDA’s
+• Automobile Computers
+• Telecomm and Networking Hardware
+• Myriad and sundry other uses...
+62
+Target Applications
+63
+Cyclades TS-100
+• Netlinos OS
+• Dual 50MHz PowerPC
+• 16MB SDRAM 4MB Flash
+• Ethernet/Serial/RS485
+• Size of a deck of cards
+64
+Sixnet VersaTRAK IPm
+• Embedded Linux
+• PowerPC CPU
+• 16MB DRAM 16MB Flash
+• Serial & Ethernet Ports
+• Linux and IEC1131 Programming/Modbus
+65
+Sharp Zaurus
+• Lineo Embedix
+• 206 MHz StrongARM
+• 64 MB DRAM 16MB Flash
+• 3.5” display (320x240) 64K colors
+• Opera browser & Qtopia
+• QT/Embedded GUI
+66
+Cell and Web Phones
+Telepong Mobile
+Phone
+GITWiT Mobile
+Phone
+Aplio/PRO IP Phone
+67
+TiVO Set Top Box
+• Home grown port of Embedded Linux
+• 54MHz PowerPC
+• Multi GB hard disk
+68
+Axis 2120 Network Camera
+• uCLinux
+• Built-in Ethernet port
+• 100 MHz ETRAX CPU
+• 16 MB RAM
+69
+Humanoid Robots
+• Isamu
+• Univ. of
+Tokyo/Kawanda Ind.
+• Dual Pentium CPU
+• RT-Linux
+• Height: 53 inches
+• Weight: 121 lbs.
+70
+Humanoid Robots
+• Fujitsu
+• RT-Linux
+• Height: 48 cm
+• Weight: 6 kg
+• 100 units/yr
+• HOAP
+71
+The Embedded OS Market 2001
+72
+The Embedded OS Market 2002
+73
+Growth of Embedded Linux
+74
+For Further Info
+Web Sites
+• LinuxDevices.com
+http://www.linuxdevices.com/
+• Embedded Linux Consortium
+http://www.embedded-linux.org/index.php3
+• All Linux Devices
+http://alllinuxdevices.com/
+• Embedded Linux StarGate
+http://linux-embedded.com/
+75
+For Further Info
+Web Sites/Magazines
+• Dr. Dobbs Embedded Systems
+http://www.ddjembedded.com/about/
+• Embedded Linux Journal
+http://embedded.linuxjournal.com/
+• Embedded Systems Programming
+http://www.embedded.com/mag.htm
+76
+Embedded Operating Systems and Linux
+Bill Latura, April 23, 2002
+References
